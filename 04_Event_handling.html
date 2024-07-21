@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM_Manipulation</title>
+</head>
+<body>
+    <!-- //task-9 -->
+    <p id="first">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet, laboriosam.</p>
+    <button onclick="changeText()">Change text</button>
+
+    <!-- Task-10 -->
+    <button id="btn" style="border: 3px solid black;">click to change border color</button>
+</body>
+
+<script>
+    // Task-9
+    function changeText(){
+        let temp = document.getElementById("first");
+        temp.textContent = "changing text of the paragraph" 
+    }
+
+    //Task-10
+    let button = document.getElementById("btn");
+    button.addEventListener("mouseover",function(){
+        button.style.borderColor = "red";
+    })
+
+    button.addEventListener("mouseout",function(){
+        button.style.borderColor = "black";
+    })
+</script>
+</html>
