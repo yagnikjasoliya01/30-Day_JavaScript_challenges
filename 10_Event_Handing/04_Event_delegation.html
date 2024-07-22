@@ -1,0 +1,72 @@
+<!-- Activity - 05 Event delegation
+
+        
+ Task 9: Add a submit event listener to a form that prevents the default submission and logs the form data to the console.  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegation</title>
+</head>
+
+<body>
+    <!-- Task-09 -->
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ul>
+
+    <!-- Task-10 -->
+    <div id="parentContainer">
+        Child elements will be dynamically added here :
+    </div>
+
+    <button id="addButton">Add Button</button>
+
+
+</body>
+<script>
+    // Task-09
+    let myList = document.getElementById('myList');
+
+    myList.addEventListener('click', function (event) {
+        console.log(event.target);
+        if (event.target.tagName === 'LI') {
+            console.log('Clicked item:', event.target.textContent);
+        }
+    })
+
+
+
+    // Task-10
+
+    const addButton = document.getElementById('addButton');
+
+    addButton.addEventListener('click', function() {
+        const newButton = document.createElement('button');
+        newButton.textContent = 'Dynamic Button';
+        parentContainer.appendChild(newButton);
+    });
+    // function handleClick(event) {
+    //     if (event.target.tagName === 'BUTTON') {
+    //         console.log('Clicked button:', event.target.textContent);
+    //     }
+    // }
+
+    // const parentContainer = document.getElementById('parentContainer');
+
+    // parentContainer.addEventListener('click', handleClick);
+
+    
+
+    
+
+
+</script>
+
+</html>
